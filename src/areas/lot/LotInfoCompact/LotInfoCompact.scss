@@ -1,0 +1,25 @@
+@import "~app/assets/scss/bundle.scss";
+
+.lot-info-compact {
+  display: grid;
+  align-content: flex-start;
+  gap: 1.5em;
+}
+
+.lot-info-compact__title {
+  @extend .clamp-2-lines;
+
+  font-size: $font-size-5;
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+.lot-info-compact__image {
+  width: 100%;
+
+  aspect-ratio: 1 / 0.75;
+
+  border-radius: $border-radius-2;
+  object-fit: cover;
+}

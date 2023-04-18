@@ -1,0 +1,76 @@
+@mixin WidthLimit {
+	width: 100%;
+	max-width: $width-desktop;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	@include Tablet {
+		padding-left: 4vw;
+		padding-right: 4vw;
+	}
+}
+
+@mixin Scrollbar($width: 0.75em) {
+	/* Firefox */
+	@supports (scrollbar-width: thin) {
+		scrollbar-width: thin;
+		scrollbar-color: $color-raspberry-1 $color-gray-3;
+	}
+
+	/* Chrome, Edge, and Safari */
+	&::-webkit-scrollbar {
+		width: $width;
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $color-raspberry-1;
+		border-radius: 1em;
+	}
+}
+
+/* Flex Gap Compatibility */
+
+// gap utility for cross-browser compatibility (Safari)
+@mixin gap($gap) {
+	@supports (scroll-behavior: smooth) {
+		gap: $gap;
+	}
+
+	@supports not (scroll-behavior: smooth) {
+		& > *:not(:first-child) {
+			margin: $gap;
+		}
+	}
+}
+
+// row-gap utility for cross-browser compatibility (Safari)
+@mixin row-gap($gap) {
+	@supports (scroll-behavior: smooth) {
+		row-gap: $gap;
+	}
+
+	@supports not (scroll-behavior: smooth) {
+		& > *:not(:first-child) {
+			margin-top: $gap;
+		}
+	}
+}
+
+// column-gap utility for cross-browser compatibility (Safari)
+@mixin column-gap($gap) {
+	@supports (scroll-behavior: smooth) {
+		column-gap: $gap;
+	}
+
+	@supports not (scroll-behavior: smooth) {
+		& > *:not(:first-child) {
+			margin-left: $gap;
+		}
+	}
+}

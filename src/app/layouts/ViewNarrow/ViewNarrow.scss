@@ -1,0 +1,21 @@
+@import "~app/assets/scss/bundle.scss";
+
+.view-narrow {
+	$gap: 5em;
+
+	display: grid;
+	align-content: space-between;
+	gap: $gap;
+
+	width: 100%;
+	max-width: 730px;
+	margin: $gap auto;
+
+	section {
+		margin: 2.5em 0;
+	}
+
+	@include Mobile {
+		margin-block: unset;
+	}
+}

@@ -1,0 +1,47 @@
+@import "~app/assets/scss/bundle.scss";
+
+.edit-avatar {
+	$size: 7.5em;
+
+	width: $size;
+	height: $size;
+
+	border-radius: 50%;
+	overflow: hidden;
+
+	&--pending {
+		border: 2px solid $color-blue;
+	}
+}
+
+.edit-avatar__image {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+}
+
+.edit-avatar__cover {
+	position: absolute;
+	inset: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: linear-gradient(to bottom, $color-dark -25%, rgba($color-dark, 0.6) 110%);
+	transition: 350ms ease opacity;
+	cursor: pointer;
+
+	&:not(:hover) {
+		opacity: 0;
+	}
+}
+
+.edit-avatar__icon {
+	--icon-size: 1.75em;
+	color: $color-white;
+}
+
+.edit-avatar__input {
+	display: none;
+}

@@ -1,0 +1,23 @@
+@import "~app/assets/scss/bundle.scss";
+
+.you {
+	display: flex;
+	align-items: center;
+	// gap: 0.5em;
+	@include column-gap(0.5em);
+}
+
+.you__avatar {
+	$size: 3em;
+
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.you__text {
+	color: $color-main-text;
+	font-size: $font-size-5;
+	font-weight: 500;
+}

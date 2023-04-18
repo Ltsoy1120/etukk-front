@@ -1,0 +1,33 @@
+@import "~app/assets/scss/bundle.scss";
+
+.customer-rating {
+	display: grid;
+	align-content: baseline;
+	gap: 1em;
+}
+
+.customer-rating__entry {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	min-width: 13.5em;
+
+	@include Mobile {
+		min-width: 50vw;
+	}
+}
+
+.customer-rating__text {
+	font-size: $font-size-6;
+
+	@include Mobile {
+		font-size: $font-size-7;
+	}
+}
+
+.customer-rating__counters {
+	display: flex;
+	// gap: 0.75em;
+	@include column-gap(0.75em);
+}

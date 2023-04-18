@@ -1,0 +1,25 @@
+@import "~app/assets/scss/bundle.scss";
+
+.contacts {
+	display: grid;
+	gap: 2em;
+
+	max-width: 34em;
+
+	.entries>.entry {
+		align-items: flex-start;
+		line-height: 1.25;
+
+		span {
+			&:first-child {
+				color: $color-main-text;
+				font-weight: 600;
+				flex-grow: 1;
+			}
+
+			&:last-child {
+				flex-basis: 22em;
+			}
+		}
+	}
+}

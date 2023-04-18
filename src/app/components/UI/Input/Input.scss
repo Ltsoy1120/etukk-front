@@ -1,0 +1,76 @@
+@import "~app/assets/scss/bundle.scss";
+
+.input {
+	display: grid;
+	gap: 0.5em;
+
+	width: var(--input-width, fit-content);
+
+	@include Mobile {
+		width: 100%;
+	}
+}
+
+.input__appearance {
+	display: flex;
+	align-items: center;
+	transition: 200ms ease border-color;
+
+	@include InputAppearance;
+
+	.input:invalid > &,
+	.input--invalid > & {
+		border-color: $color-raspberry-1;
+	}
+}
+
+.input__input {
+	width: 100%;
+	font-size: $font-size-5;
+	transition: 200ms ease color;
+
+	&:invalid,
+	&--invalid {
+		color: $color-raspberry-1;
+	}
+
+	&::placeholder {
+		color: $color-gray-3;
+	}
+
+	&[type="number"] {
+		appearance: unset;
+
+		&::-webkit-inner-spin-button {
+			appearance: unset;
+		}
+	}
+}
+
+.input__icon {
+	--icon-size: #{$font-size-5};
+	color: $color-gray-3;
+
+	&--clickable {
+		cursor: pointer;
+	}
+}
+
+.input__validity {
+	color: $color-raspberry-1;
+	font-size: $font-size-6;
+
+	&:not(&--active) {
+		visibility: hidden;
+	}
+}
+
+.input__label {
+	font-size: $font-size-6;
+	line-height: 1.25;
+	text-align: left;
+	height: var(--label-height, fit-content);
+	@include Mobile {
+		font-size: $font-size-5;
+	}
+}

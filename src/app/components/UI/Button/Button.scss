@@ -1,0 +1,126 @@
+@import "~app/assets/scss/bundle.scss";
+
+@function getHoverColor($color) {
+	@return rgba($color, 0.75);
+}
+
+.button {
+	--button-color: #{$color-white};
+	--hover-button-color: #{$color-white};
+
+	--button-background-color: #{$color-raspberry-1};
+	--hover-button-background-color: #{getHoverColor($color-raspberry-1)};
+
+	--button-border-color: transparent;
+	--hover-button-border-color: transparent;
+
+	$background-color: var(--button-background-color);
+	$border-color: var(--button-border-color);
+	$color: var(--button-color);
+
+	$hover-background-color: var(--hover-button-background-color);
+	$hover-border-color: var(--hover-button-border-color);
+	$hover-color: var(--hover-button-color);
+
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 0.5em;
+
+	padding: 0.75em 1em;
+	background: $background-color;
+	border: 1px solid $border-color;
+	border-radius: $border-radius-1;
+	transition: 250ms ease background-color, 250ms ease border-color,
+		250ms ease color;
+
+	color: $color;
+
+	&:disabled:not(&--pending),
+	&--disabled:not(&--pending) {
+		opacity: 0.2;
+	}
+
+	&:active:not(:disabled) {
+		opacity: 0.7;
+	}
+
+	&:hover:not(:disabled) {
+		background: $hover-background-color;
+		border-color: $hover-border-color;
+		color: $hover-color;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+
+	&--small {
+		padding: 0.625em 0.75em;
+	}
+
+	&--outline {
+		--button-color: #{$color-raspberry-1};
+		--hover-button-color: #{getHoverColor($color-raspberry-1)};
+
+		--button-background-color: transparent;
+		--hover-button-background-color: transparent;
+
+		--button-border-color: var(--button-color);
+		--hover-button-border-color: var(--hover-button-color);
+	}
+
+	&--dark {
+		--button-color: #{$color-white};
+		--hover-button-color: #{getHoverColor($color-white)};
+	}
+
+	&--gray {
+		--button-color: #{$color-gray-3};
+		--hover-button-color: #{getHoverColor($color-gray-3)};
+	}
+
+	&--white {
+		--button-color: #{$color-raspberry-1};
+		--hover-button-color: #{getHoverColor($color-raspberry-1)};
+
+		--button-background-color: #{$color-white};
+		--hover-button-background-color: #{getHoverColor($color-white)};
+	}
+
+	&--pending {
+		.button__text {
+			color: transparent;
+		}
+
+		.button__loader {
+			visibility: visible;
+		}
+	}
+	&--publish {
+		height: 35px;
+	}
+	@include Mobile {
+		padding: 0.85em 1.25em;
+		cursor: pointer;
+		&--small {
+			padding: 0.75em 1em;
+		}
+	}
+}
+
+a.button {
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+.button__text {
+	font-size: $font-size-5;
+	font-weight: 500;
+}
+
+.button__loader {
+	visibility: hidden;
+}

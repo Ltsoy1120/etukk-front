@@ -1,0 +1,50 @@
+@import "~app/assets/scss/bundle.scss";
+
+.selector {
+	display: grid;
+	gap: 0.5em;
+
+	width: var(--selector-width, fit-content);
+	min-width: 15em;
+
+	@include Mobile {
+		width: auto;
+	}
+}
+
+.selector__label {
+	font-size: $font-size-6;
+}
+
+.selector__appearance {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include column-gap(1em);
+
+	@include InputAppearance;
+
+	cursor: pointer;
+}
+
+.selector__current {
+	font-size: $font-size-5;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	&--empty {
+		color: $color-gray-3;
+	}
+}
+
+.selector__icon {
+	--icon-size: 0.75em;
+
+	color: $color-main-text;
+	transition: 200ms ease transform;
+
+	&--up {
+		transform: rotateX(180deg);
+	}
+}

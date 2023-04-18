@@ -1,0 +1,59 @@
+@import "~app/assets/scss/bundle";
+
+.repair-layout {
+	position: absolute;
+	inset: 0;
+
+	display: flex;
+	background: $color-white;
+	cursor: initial;
+	@include Mobile {
+		background-size: cover;
+		width: 100vw;
+		.repair-layout__container {
+			margin: 0 5vw;
+			display: grid;
+			gap: 2.5em;
+
+			width: var(--repair-width);
+			.repair-layout__logo {
+				height: 3.25em;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.repair-layout__container {
+	display: grid;
+	align-content: center;
+	justify-items: center;
+
+	flex: 1;
+
+	overflow: auto;
+}
+
+.repair-layout__icon {
+	display: grid;
+	align-items: center;
+	width: 9vw;
+
+	opacity: 0.2;
+
+	img {
+		position: absolute;
+		left: -35vh;
+		width: 100vh;
+		transform: rotate(-90deg);
+	}
+}
+
+.center {
+	width: var(--repair-width);
+	span {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+	}
+}

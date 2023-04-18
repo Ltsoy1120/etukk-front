@@ -1,0 +1,61 @@
+@import "~app/assets/scss/bundle.scss";
+
+.topbar {
+	display: flex;
+	align-items: center;
+	@include column-gap(1.5em);
+}
+
+.topbar-menu {
+	display: flex;
+	align-items: center;
+	// justify-content: space-between;
+	// gap: 2em;
+	@include column-gap(1em);
+
+	flex: 1;
+}
+
+.topbar-menu__link {
+	color: $color-main-text;
+	font-size: $font-size-5;
+
+	text-decoration: none;
+
+	// max-width: 10em;
+
+	&--active {
+		color: $color-raspberry-1;
+		text-decoration: underline;
+	}
+
+	@include Mobile {
+		&:not(:first-child) {
+			display: none;
+		}
+	}
+}
+
+.topbar-actions {
+	display: flex;
+	align-items: center;
+	@include column-gap(1em);
+
+	& > :first-child {
+		margin-right: 1.5em;
+	}
+
+	@include Mobile {
+		display: none;
+	}
+}
+
+.topbar-actions__action {
+	--icon-size: 1.25em;
+
+	color: $color-gray-3;
+}
+
+.topbar-menu__icon {
+	--icon-size: 1.25em;
+}

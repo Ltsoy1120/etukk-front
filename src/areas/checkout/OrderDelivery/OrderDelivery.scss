@@ -1,0 +1,30 @@
+@import "~app/assets/scss/bundle.scss";
+
+.order-delivery {
+  display: grid;
+  gap: 2em;
+}
+
+.order-delivery__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-delivery__text {
+  margin: unset;
+}
+
+.order-delivery__inputs {
+  display: grid;
+  gap: 1.5em;
+
+  .input {
+    width: 100%;
+  }
+}
+
+.order-delivery__column {
+  display: grid;
+  gap: 1em;
+}

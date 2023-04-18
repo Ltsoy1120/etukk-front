@@ -1,0 +1,10 @@
+.clamp-2-lines {
+	@include line-clamp(2);
+}
+
+.area {
+	display: flex;
+	justify-content: space-between;
+
+	@include Area;
+}

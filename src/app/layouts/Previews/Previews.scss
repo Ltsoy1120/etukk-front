@@ -1,0 +1,24 @@
+@import "~app/assets/scss/bundle.scss";
+
+.previews {
+	display: grid;
+	align-content: flex-start;
+	justify-content: space-between;
+	grid-template-columns: repeat(auto-fill, minmax(14.25em, 1fr));
+	gap: 2em;
+
+	flex: 1;
+
+	@include Mobile {
+		// display: flex;
+		// flex-wrap: wrap;
+		// justify-content: space-between;
+		gap: 1em;
+		grid-template-columns: repeat(2, 1fr);
+
+		&--asd {
+			justify-content: unset;
+			grid-template-columns: unset;
+		}
+	}
+}

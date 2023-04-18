@@ -1,0 +1,153 @@
+@import "~app/assets/scss/bundle.scss";
+
+.slider {
+	display: grid;
+	gap: 2.5em;
+}
+
+.slider__container {
+	display: grid;
+	gap: 0.5em;
+}
+
+.slider__current {
+	.slider__slide {
+		width: 100%;
+		object-fit: contain;
+	}
+}
+
+$arrow-icon-size: 1em;
+
+.slider__arrows {
+	position: absolute;
+	inset-block: 0;
+	inset-inline: -$arrow-icon-size;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	pointer-events: none;
+}
+
+.slider__arrow {
+	--icon-size: #{$arrow-icon-size};
+
+	display: flex;
+	padding: $arrow-icon-size * 0.6;
+	background: $color-white;
+	border-radius: 50%;
+
+	pointer-events: initial;
+
+	&:nth-child(1) {
+		transform: rotate(90deg);
+	}
+
+	&:nth-child(2) {
+		transform: rotate(-90deg);
+	}
+}
+
+.slider__slide {
+	aspect-ratio: 1;
+	border-radius: $border-radius-1;
+	object-fit: cover;
+
+	width: 5em;
+}
+
+.slider__slides {
+	display: flex;
+	flex-wrap: nowrap;
+	@include column-gap(0.25em);
+
+	width: 100%;
+	overflow: auto;
+
+	.slider__slide {
+		cursor: pointer;
+	}
+}
+
+/* Video */
+
+.slider-video {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slider-video__play {
+	position: absolute;
+
+	padding: 1em 0.8em 1.1em 1.2em;
+	background: rgba($color-dark, 0.25);
+	border: 1px solid rgba($color-white, 0.75);
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+
+.slider-video__icon {
+	--icon-size: 2.5em;
+}
+
+.slider__slide-video__play {
+	position: absolute;
+
+	padding: 0.5em 0.4em 0.6em 0.8em;
+	background: rgba($color-dark, 0.25);
+	border: 1px solid rgba($color-white, 0.75);
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+
+.slider__slide-video__icon {
+	--icon-size: 1em;
+}
+
+// Swiper
+.swiper-main {
+	width: 90vw;
+	height: 50vh;
+	border: 1px solid $color-gray-3;
+	border-radius: 10px;
+	.swiper-slide {
+		overflow: hidden;
+		object-fit: contain;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			pointer-events: none;
+			width: 100%;
+		}
+	}
+}
+
+.swiper-thumbs {
+	width: 90vw;
+	height: 10vh;
+	margin-top: 1em;
+	.swiper-slide {
+		cursor: pointer;
+		&-thumv-active {
+			border-color: white;
+		}
+	}
+	&-wrapper {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		border: 1px solid $color-gray-3;
+		display: flex;
+		align-items: center;
+		border-radius: 10px;
+		img {
+			width: 100%;
+		}
+	}
+}

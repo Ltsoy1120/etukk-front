@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES5",
+      "ESNext"
+    ],
+    "baseUrl": "src",
+    "skipLibCheck": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strictNullChecks": true,
+    "downlevelIteration": true,
+    "noImplicitAny": true,
+    "jsx": "react",
+    "checkJs": true,
+    "alwaysStrict": true,
+
+    "disableSizeLimit": true,
+    // "noImplicitOverride": true,
+    "useDefineForClassFields": true
+  },
+  "exclude": ["node_modules", "build", "public", "scripts", ".vscode", ".github", "design"]
+}

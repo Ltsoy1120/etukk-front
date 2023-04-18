@@ -1,0 +1,71 @@
+@import "~app/assets/scss/bundle.scss";
+
+.entries {
+	display: grid;
+	gap: 1em;
+}
+
+.entry {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	font-size: $font-size-5;
+	font-weight: 500;
+
+	&>:not(em, big) {
+		&:nth-child(1) {
+			color: $color-gray-2;
+			font-weight: 400;
+		}
+
+		&:nth-child(2) {}
+	}
+
+	&>:nth-child(1) {
+		// max-width: 22ch;
+	}
+
+	&> :nth-child(2) {}
+
+
+	big {
+		font-size: $font-size-3;
+		font-weight: 600;
+	}
+
+	&--reverse {
+		:nth-child(1) {
+			color: inherit;
+		}
+
+		:nth-child(2) {
+			color: $color-gray-2;
+		}
+	}
+
+	&--column {
+		display: grid;
+		justify-content: unset;
+		gap: 0.5em;
+	}
+}
+
+/* Counter */
+
+.entry-counter {
+	display: flex;
+	justify-content: space-between;
+}
+
+.entry-counter__key {
+	font-size: $font-size-6;
+}
+
+.entry-counter__value {
+	display: flex;
+	// gap: 0.5em;
+	@include column-gap(0.5em);
+
+	font-size: $font-size-5;
+}

@@ -1,0 +1,20 @@
+@import "~app/assets/scss/bundle.scss";
+
+.container {
+	// position: initial;
+
+	display: flex;
+	align-content: baseline;
+	justify-content: space-between;
+	// gap: 2.5em;
+	@include column-gap(2.5em);
+
+	&--row {
+		display: grid;
+		justify-content: unset;
+	}
+
+	@include Mobile {
+		flex-direction: column;
+	}
+}

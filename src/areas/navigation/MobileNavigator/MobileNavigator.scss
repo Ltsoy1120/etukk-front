@@ -1,0 +1,70 @@
+@import "~app/assets/scss/bundle.scss";
+
+.mobile-navigator {
+	position: sticky;
+	bottom: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100vw;
+
+	padding: 0.5em 4vw;
+	background: $color-white;
+	border-radius: 1em 1em 0 0;
+	box-shadow: 2px 0px 16px -2px rgba(39, 45, 58, 0.25);
+}
+
+.mobile-navigator-link {
+	display: flex;
+	align-items: center;
+
+	color: $color-main-text;
+	text-decoration: none;
+}
+
+.mobile-navigator-link__circle {
+	top: 0;
+	padding: 0.75em;
+	background: $color-white;
+	// outline: 8px solid $color-white;
+	border-radius: 50%;
+
+	transition: 200ms ease top, 200ms ease background-color;
+
+	.mobile-navigator-link--active & {
+		top: -2.5em;
+		background-color: $color-raspberry-1;
+		box-shadow: 2px 0px 16px 2px rgba(39, 45, 58, 0.25);
+	}
+}
+
+.mobile-navigator-link__icon {
+	--icon-size: 1.25rem;
+	color: $color-gray-3;
+	transition: 200ms ease color;
+
+	.mobile-navigator-link--active & {
+		color: $color-white;
+	}
+
+	&--bookmark {
+		--icon-size: 1rem;
+	}
+}
+
+.mobile-navigator-link__label {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
+	white-space: nowrap;
+
+	opacity: 0;
+	transition: 200ms ease opacity;
+
+	.mobile-navigator-link--active & {
+		opacity: 1;
+	}
+}

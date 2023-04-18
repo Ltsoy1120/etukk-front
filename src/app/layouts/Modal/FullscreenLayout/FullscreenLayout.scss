@@ -1,0 +1,60 @@
+@import "~app/assets/scss/bundle.scss";
+
+.fullscreen-layout {
+	position: absolute;
+	inset: 0;
+
+	display: flex;
+	background: $color-white;
+	cursor: initial;
+}
+
+.fullscreen-layout__container {
+	display: grid;
+	align-content: flex-start;
+	justify-items: center;
+
+	flex: 1;
+
+	padding-top: 10vh;
+	overflow: auto;
+}
+
+.fullscreen-layout__inner {
+	display: grid;
+	gap: 2.5em;
+
+	width: var(--fullscreen-width);
+}
+
+.fullscreen-layout__icon {
+	display: grid;
+	align-items: center;
+	width: 9vw;
+
+	opacity: 0.2;
+
+	img {
+		position: absolute;
+		left: -35vh;
+		width: 100vh;
+		transform: rotate(-90deg);
+	}
+}
+
+.fullscreen-layout__close {
+	--icon-size: 1.25em;
+
+	position: absolute;
+	top: 1.5em;
+	right: 1.5em;
+
+	@include Mobile {
+		color: $color-white;
+	}
+}
+
+.fullscreen-layout__logo {
+	height: 3.25em;
+	margin: 0 auto;
+}

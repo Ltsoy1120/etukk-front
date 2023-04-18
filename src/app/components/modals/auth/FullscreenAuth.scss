@@ -1,0 +1,82 @@
+@import "~app/assets/scss/bundle";
+
+.fullscreen-auth {
+	@include Mobile {
+		background: url("./bg.png") 0 -10em/cover;
+
+		.fullscreen-layout__inner {
+			width: 100%;
+
+			width: 360px;
+			margin: 0 auto;
+
+			color: rgba($color-white, 0.6);
+
+			.heading {
+				color: $color-white;
+			}
+
+			.social-auth__text {
+				color: rgba($color-white, 0.6);
+			}
+
+			.social-auth__socials {
+				// filter: sepia(0.6);
+				color: #B91E4B;
+			}
+
+			.input__appearance {
+				color: $color-white;
+				border-color: rgba($color-white, 0.6);
+			}
+
+			.input__icon {
+				color: $color-white;
+			}
+
+			.input__input::placeholder {
+				color: $color-white;
+			}
+
+			.button[type="submit"],
+			.button--outline {
+				--button-color: #ED1D4A;
+				--hover-button-color: rgba(237, 29, 74, 0.75);
+				--button-background-color: white;
+				--hover-button-background-color: rgba(255, 255, 255, 0.75);
+			}
+
+			.button[type="submit"]:disabled {
+				--button-color: rgba($color-white, 0.6);
+				--button-background-color: #B91E4B;
+
+				opacity: 1;
+			}
+
+			.button--white {
+				--button-color: white;
+				--hover-button-color: rgba(255, 255, 255, 0.75);
+				--button-background-color: transparent;
+				--hover-button-background-color: transparent;
+			}
+
+			.form--centered {
+				justify-items: unset;
+				padding-inline: 4vw;
+			}
+
+			.checkbox {
+				justify-content: center;
+			}
+
+			.checkbox__label a {
+				color: rgba($color-white, 0.6);
+			}
+
+			// Google Recaptcha
+			div>div>div[style] {
+				margin: auto;
+			}
+		}
+	}
+}

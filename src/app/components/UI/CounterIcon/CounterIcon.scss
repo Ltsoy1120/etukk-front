@@ -1,0 +1,26 @@
+@import "~app/assets/scss/bundle.scss";
+
+.counter-icon {
+	display: flex;
+	align-items: center;
+	// gap: 0.25em;
+	@include column-gap(0.35em);
+}
+
+.counter-icon__count {
+	font-size: $font-size-6;
+	font-weight: 500;
+
+	@include Mobile {
+		// font-weight: 500;
+	}
+}
+
+.counter-icon__icon {
+	// --icon-size: #{$font-size-5};
+	color: #DDE4E8;
+
+	&[name="star"] {
+		color: $color-yellow;
+	}
+}

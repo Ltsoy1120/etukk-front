@@ -1,0 +1,33 @@
+@import "~app/assets/scss/bundle.scss";
+
+.get-back {
+	display: flex;
+	align-items: baseline;
+	// gap: 0.5em;
+	max-width: 25em;
+	overflow: hidden;
+	@include column-gap(0.5em);
+
+	color: $color-main-text;
+	text-decoration: none;
+}
+
+.get-back__icon {
+	--icon-size: 1em;
+
+	top: 1px;
+	flex-shrink: 0;
+	transform: rotate(90deg);
+
+	// @include Mobile {
+	// 	display: none;
+	// }
+}
+
+.get-back__text {
+	@include Typography;
+
+	font-size: $font-size-3;
+	font-weight: 600;
+	text-transform: uppercase;
+}

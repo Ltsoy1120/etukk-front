@@ -1,0 +1,16 @@
+@import "~app/assets/scss/bundle.scss";
+
+.sorting-toggle {
+	display: flex;
+	align-items: center;
+	// gap: 0.25em;
+	@include column-gap(0.25em);
+}
+
+.sorting-toggle__text {
+	font-size: $font-size-6;
+}
+
+.sorting-toggle__icon {
+	--icon-size: #{$font-size-6};
+}

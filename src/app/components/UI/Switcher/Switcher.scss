@@ -1,0 +1,29 @@
+@import "~app/assets/scss/bundle.scss";
+
+.switcher {
+	display: flex;
+	align-items: center;
+	// gap: 2em;
+	@include column-gap(2em);
+
+	overflow: auto;
+
+	padding-bottom: 0.25em; // Scrollbar margin
+}
+
+.switcher__item {
+	flex-shrink: 0;
+
+	padding-bottom: 0.5em;
+	border-bottom: 2px solid transparent;
+	color: $color-gray-2;
+	font-size: $font-size-5;
+	text-decoration: none;
+	transition: 150ms ease border-color, 150ms ease color;
+
+	&--active {
+		color: $color-dark;
+		font-weight: 600;
+		border-color: $color-raspberry-1;
+	}
+}

@@ -1,0 +1,8 @@
+@font-face {
+	font-family: "Inter";
+	src: url('GoogleSans-MediumItalic.eot');
+	src: local("Inter Variable weight"), local("Inter-Variable-weight"),
+		url("Inter-VariableFont_slnt,wght.ttf") format('truetype');
+	font-weight: 100 1000;
+	font-style: normal;
+}

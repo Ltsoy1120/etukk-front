@@ -1,0 +1,37 @@
+@import "~app/assets/scss/bundle.scss";
+
+.drawer-layout {
+	position: absolute;
+	inset: 0;
+
+	overflow: hidden;
+}
+
+.drawer-layout__container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	// height: 100vh;
+
+
+	padding: 1em 1.5em;
+	padding-right: max(4vw, calc((100% - $width-desktop) / 2));
+	background: $color-white;
+	border: 1px solid rgba($color-white, 0.35);
+	transition: 250ms ease opacity, 350ms ease transform;
+
+	overflow: auto;
+	cursor: initial;
+
+	.modal:not(.modal--active) & {
+		opacity: 0;
+		transform: translateX(100%);
+		pointer-events: none;
+	}
+
+	@include Mobile {
+		left: 0;
+		padding-right: 4vw;
+	}
+}

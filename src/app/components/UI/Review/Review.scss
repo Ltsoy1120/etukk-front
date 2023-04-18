@@ -1,0 +1,70 @@
+@import "~app/assets/scss/bundle.scss";
+
+.review {
+	display: grid;
+	align-content: flex-start;
+	gap: 1.5em;
+}
+
+.review__header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.review__product {
+	color: $color-gray-2;
+	font-size: $font-size-6;
+}
+
+.review__date {
+	font-size: $font-size-6;
+}
+
+.review__text {
+	@include Typography;
+	margin: unset;
+	font-size: $font-size-5;
+}
+
+.review__attachments {
+	display: flex;
+	// gap: 0.5em;
+	@include column-gap(0.5em);
+
+	cursor: pointer;
+}
+
+.review__attachment {
+	height: 4em;
+	aspect-ratio: 1.25;
+
+	border-radius: $border-radius-1;
+	object-fit: cover;
+}
+
+/* User */
+
+.review-user {
+	display: flex;
+	@include column-gap(1em);
+}
+
+.review-user__avatar {
+	height: 2.875em;
+	aspect-ratio: 1;
+
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.review-user__info {
+	display: grid;
+	align-content: center;
+	gap: 0.5em;
+}
+
+.review-user__name {
+	font-size: $font-size-5;
+	font-weight: 500;
+}

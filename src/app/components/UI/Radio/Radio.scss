@@ -1,0 +1,46 @@
+@import "~app/assets/scss/bundle.scss";
+
+.radio {
+	display: flex;
+	align-items: center;
+	// gap: 0.75em;
+	@include column-gap(0.75em);
+}
+
+.radio__input {
+	display: none;
+}
+
+.radio__appearance {
+	display: flex;
+	padding: 0.6825em;
+	background: $color-white;
+	border: 1px solid $color-raspberry-1;
+	border-radius: 50%;
+	transition: 150ms ease background-color;
+	cursor: pointer;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 25%;
+		left: 25%;
+
+		width: 50%;
+		height: 50%;
+		background: $color-white;
+		border-radius: inherit;
+	}
+
+	:checked+& {
+		background: $color-raspberry-1;
+	}
+}
+
+.radio__label {
+	font-size: $font-size-5;
+
+	:checked~& {
+		color: $color-raspberry-1;
+	}
+}

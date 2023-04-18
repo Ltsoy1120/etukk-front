@@ -1,0 +1,21 @@
+@import "~app/assets/scss/bundle.scss";
+
+.row {
+	display: flex;
+	align-items: baseline;
+
+	@include DesktopOnly {
+		@include column-gap(1em);
+	}
+
+	@include Mobile {
+		display: grid;
+		gap: 1em;
+	}
+}
+
+.column {
+	display: grid;
+	align-content: baseline;
+	gap: var(--column-gap, 1.5em);
+}

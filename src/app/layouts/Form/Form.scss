@@ -1,0 +1,13 @@
+@import "~app/assets/scss/bundle.scss";
+
+.form {
+	all: unset;
+
+	display: grid;
+	gap: 0.5em;
+
+	&--centered {
+		justify-items: center;
+		text-align: center;
+	}
+}

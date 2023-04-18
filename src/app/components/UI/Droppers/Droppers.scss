@@ -1,0 +1,92 @@
+@import "~app/assets/scss/bundle.scss";
+
+.droppers {
+	display: flex;
+}
+
+.droppers__list {
+	display: grid;
+	gap: 1em;
+
+	flex: 1;
+}
+
+.droppers__container {
+	flex: 1;
+	margin-right: 2.5em;
+}
+
+.droppers__groups {
+	display: grid;
+	align-content: flex-start;
+	gap: 1em;
+
+	min-width: 18.75em;
+	flex-shrink: 0;
+
+	@include Mobile {
+		min-width: auto;
+	}
+}
+
+/* Dropper */
+
+.dropper {
+	display: grid;
+	gap: 1em;
+}
+
+.dropper__container {
+	transition: 350ms ease height;
+	height: 0px;
+
+	&--expanded {
+		height: calc(var(--dropper-height) * 1px);
+	}
+}
+
+.dropper__inner {
+	transition: 250ms ease opacity, 250ms ease transform;
+
+	:not(.dropper__container--expanded) > & {
+		opacity: 0;
+		transform: translateY(-5%);
+		pointer-events: none;
+	}
+}
+
+/* Dropper Group */
+
+.dropper-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 1.1em 1em;
+	border-radius: $border-radius-1;
+	box-shadow: 0 2px 8px -2px rgb(183, 183, 183);
+
+	&--active {
+		background: rgba($color-gray-1, 0.1);
+		font-weight: 500;
+	}
+}
+
+.dropper-group__text {
+	font-size: $font-size-5;
+}
+
+.dropper-group__side {
+	display: flex;
+	align-items: center;
+	@include column-gap(1em);
+}
+
+.dropper-group__icon {
+	--icon-size: 0.75em;
+}
+
+.dropper-group__amount {
+	font-size: $font-size-5;
+	font-weight: 500;
+}

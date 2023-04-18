@@ -1,0 +1,54 @@
+@import "~app/assets/scss/bundle.scss";
+
+.seller-compact {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	flex: 1;
+
+	padding: 0.75em 1.25em;
+	background: $color-white;
+	border: 1px solid $color-gray-4;
+	border-radius: $border-radius-1;
+
+	@include Mobile {
+		display: grid;
+		justify-content: unset;
+		gap: 1em;
+	}
+}
+
+.seller-compact__entries {
+	display: grid;
+	gap: 0.5em;
+
+	&--right {
+		justify-items: flex-end;
+	}
+
+	@include Mobile {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.seller-compact__entry {
+	display: flex;
+	align-items: center;
+	// gap: 0.5em;
+	@include column-gap(0.5em);
+
+	font-size: $font-size-6;
+	font-weight: 500;
+}
+
+.seller-compact__name {
+	font-size: $font-size-5;
+	font-weight: 600;
+}
+
+.seller-compact__id {
+	color: $color-gray-2;
+	font-size: $font-size-6;
+}

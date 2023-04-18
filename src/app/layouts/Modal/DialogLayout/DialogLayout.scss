@@ -1,0 +1,113 @@
+@import "~app/assets/scss/bundle.scss";
+
+/// ------------------
+/// MOBILE STYLES ONLY
+/// ------------------
+
+$gap: 2em;
+
+.dialog-layout {
+	all: unset;
+
+	@keyframes show {
+		from {
+			transform: translateY(25%);
+			overflow: hidden;
+		}
+	}
+
+	@keyframes hide {
+		to {
+			transform: translateY(25%);
+			overflow: hidden;
+		}
+	}
+
+
+	margin-top: auto;
+	overflow: hidden;
+	animation: 200ms ease show forwards;
+	cursor: pointer;
+
+	.modal:not(.modal--active) & {
+		animation: 200ms ease hide forwards;
+	}
+}
+
+.dialog-layout__container {
+	width: 100vw;
+	padding: unset;
+	border-radius: $border-radius-2 $border-radius-2 0 0;
+}
+
+.dialog-layout__close {
+	--icon-size: 1.5em;
+
+	margin-left: auto;
+	color: #BCC2C7;
+
+	&--hidden {
+		visibility: hidden;
+	}
+}
+
+.dialog-layout__inner {
+	display: grid;
+	// align-content: flex-start;
+	// justify-items: center;
+	gap: $gap;
+
+	background: $color-white;
+	border: 1px solid $color-gray-3;
+	border-radius: $border-radius-2 $border-radius-2 0 0;
+	cursor: initial;
+
+	padding: 1em;
+
+	/* When passing only one child, it shows a desire to pass a wrapper (e.g. form element) */
+	&>:only-child {
+		display: grid;
+		gap: $gap;
+	}
+
+	&--centered {
+		text-align: center;
+	}
+
+	// &--push-left {
+	// 	justify-items: left;
+	// }
+
+	// &--push-right {
+	// 	justify-items: right;
+	// }
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		margin: unset;
+	}
+
+	h1,
+	h2 {
+		text-transform: uppercase;
+	}
+
+	:last-child {
+		.button {
+			flex: 1;
+			padding: 1em;
+		}
+
+		.button__text {
+			font-size: 1em;
+		}
+
+		.buttons {
+			width: 100%;
+			max-width: 50em;
+		}
+	}
+}

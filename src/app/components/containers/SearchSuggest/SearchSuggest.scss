@@ -1,0 +1,41 @@
+@import "~app/assets/scss/bundle.scss";
+
+.search-suggest {
+	width: var(--search-width);
+	margin: 0 auto;
+
+	@include Mobile {
+		width: 100%;
+	}
+}
+
+.search-suggest__container {
+	position: absolute;
+	top: 2.5em;
+
+	width: 100%;
+	background: $color-white;
+	border: 1px solid $color-gray-4;
+	border-radius: 0.25em;
+	transition: 250ms ease opacity, 250ms ease transform;
+	z-index: 1;
+
+	&:not(&--expanded) {
+		opacity: 0;
+		transform: translateY(5%);
+		pointer-events: none;
+	}
+}
+
+.search-suggest__entries {
+	display: grid;
+}
+
+.search-suggest__entry {
+	padding: 0.5em 0.75em;
+	cursor: pointer;
+
+	&:hover {
+		background: rgba($color-gray-2, 0.1);
+	}
+}

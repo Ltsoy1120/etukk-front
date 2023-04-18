@@ -1,0 +1,37 @@
+@import "~app/assets/scss/bundle.scss";
+
+.popup-youtube-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-youtube-video__container {
+  display: grid;
+  gap: 2em;
+
+  // width: 35em;
+  cursor: auto;
+
+  @include Mobile {
+    // width: fit-content;
+    padding: 0 5vw;
+  }
+}
+
+.popup-youtube-video__close {
+  --icon-size: 1.5em;
+
+  margin-left: auto;
+  color: $color-white;
+}
+
+.popup-youtube-video__iframe {
+  width: 50vw;
+
+  aspect-ratio: 16/9;
+
+  @include Mobile {
+    width: 90vw;
+  }
+}

@@ -1,0 +1,101 @@
+@import "~app/assets/scss/bundle.scss";
+
+.seller-preview {
+	$shadow-options: 0 0 4px 2px;
+
+	display: grid;
+	justify-items: center;
+
+	flex-shrink: 0;
+
+	gap: 1em;
+	padding: 0.7em;
+	max-width: 13em;
+	border-radius: 1.5em 1.5em 0 0;
+	box-shadow: $shadow-options rgba($color-dark, 0.05);
+	transition: 150ms ease background-color, 150ms ease box-shadow;
+
+	&:hover {
+		background: rgba($color-dark, 0.02);
+		box-shadow: $shadow-options rgba($color-dark, 0.1);
+	}
+
+	@include Mobile {
+		// align-items: center;
+		// justify-items: unset;
+		// gap: unset;
+		// max-width: unset;
+		max-width: 47%;
+		min-width: 45%;
+		flex: 1;
+	}
+}
+
+.seller-preview-avatar {
+	@include Mobile {
+		margin-right: 8vw;
+	}
+}
+
+.seller-preview-avatar__image {
+	$size: 4.25em;
+
+	width: $size;
+	height: $size;
+
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.seller-preview__details {
+	display: grid;
+	justify-items: center;
+
+	gap: 1em;
+
+	@include Mobile {
+		flex: 1;
+		justify-items: unset;
+	}
+}
+
+.seller-preview__name {
+	max-width: 90%;
+	@include Typography($font-size-5, 600);
+
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 0.5em;
+
+	@include Mobile {
+		overflow: hidden;
+		text-align: unset;
+		padding-top: 1em;
+	}
+}
+
+.seller-preview__city {
+	color: $color-gray-2;
+	font-size: $font-size-6;
+	text-align: center;
+
+	@include Mobile {
+		text-align: unset;
+	}
+}
+
+.seller-preview__entries {
+	width: 100%;
+
+	@include Mobile {
+		flex: 1;
+	}
+}
+
+.seller-preview__bookmark {
+	--icon-size: 2em;
+	position: absolute;
+	top: 0;
+	right: 10%;
+	transform: translateY(-25%);
+}

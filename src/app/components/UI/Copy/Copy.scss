@@ -1,0 +1,18 @@
+@import "~app/assets/scss/bundle.scss";
+
+.copy {
+	display: flex;
+	align-items: center;
+	@include column-gap(1em);
+}
+
+.copy__text {
+	font-size: $font-size-5;
+	font-weight: 600;
+}
+
+.copy__icon {
+	--icon-size: 1.5em;
+
+	color: $color-gray-3;
+}

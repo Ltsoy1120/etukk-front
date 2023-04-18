@@ -1,0 +1,92 @@
+@import "~app/assets/scss/bundle";
+
+.fullscreen-auth {
+	@include Mobile {
+		background: url("./bg.png") no-repeat;
+		background-size: cover;
+		width: 100vw;
+		.fullscreen-layout__container {
+			padding: 3vh 0;
+			margin: 0 5vw;
+		}
+		.fullscreen-layout__inner {
+			width: 100%;
+			margin: 0 auto;
+			color: rgba($color-white, 0.6);
+
+			.heading {
+				color: $color-white;
+			}
+
+			.social-auth__text {
+				color: rgba($color-white, 0.6);
+			}
+
+			.social-auth__socials {
+				// filter: sepia(0.6);
+				color: #b91e4b;
+			}
+
+			.input__appearance {
+				color: $color-white;
+				border-color: rgba($color-white, 0.6);
+			}
+
+			.input__icon {
+				color: $color-white;
+			}
+
+			.input__input::placeholder {
+				color: $color-white;
+			}
+
+			.button[type="submit"],
+			.button--outline {
+				--button-color: #ed1d4a;
+				--hover-button-color: rgba(237, 29, 74, 0.75);
+				--button-background-color: white;
+				--hover-button-background-color: rgba(255, 255, 255, 0.75);
+				.button__text {
+					color: #ed1d4a;
+				}
+			}
+
+			.button[type="submit"]:disabled {
+				--button-color: rgba($color-white, 0.6);
+				--button-background-color: #b91e4b;
+
+				opacity: 1;
+			}
+
+			.button--white {
+				--button-color: white;
+				--hover-button-color: rgba(255, 255, 255, 0.75);
+				--button-background-color: transparent;
+				--hover-button-background-color: transparent;
+			}
+
+			.form--centered {
+				justify-items: unset;
+			}
+
+			.checkbox {
+				justify-content: center;
+				.checkbox__appearance {
+					color: white;
+					.checkbox__icon {
+						color: white;
+					}
+				}
+			}
+
+			.checkbox__label a {
+				color: rgba($color-white, 0.6);
+			}
+
+			// Google Recaptcha
+			div > div > div[style] {
+				margin: auto;
+			}
+		}
+	}
+}

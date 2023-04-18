@@ -1,0 +1,56 @@
+@import "~app/assets/scss/bundle.scss";
+
+.user-profile {
+	display: flex;
+	align-items: flex-start;
+	// gap: 5em;
+	@include column-gap(5em);
+
+	@include Mobile {
+		display: grid;
+	}
+}
+
+.user-profile__container {
+	display: grid;
+	align-content: baseline;
+	gap: 2em;
+
+	flex: 1;
+}
+
+.user-profile__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.user-profile__entry {
+	color: $color-gray-2;
+	font-size: $font-size-5;
+}
+
+.user-profile__general-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.user-profile__info {
+	display: grid;
+	gap: 2em;
+}
+
+.user-profile__avatar {
+	width: 7.5em;
+	height: 7.5em;
+
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.user-profile__cover {
+	flex: 1;
+	height: 35em;
+	background: $color-gray-4;
+}

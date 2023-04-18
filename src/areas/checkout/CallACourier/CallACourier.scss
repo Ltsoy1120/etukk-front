@@ -1,0 +1,24 @@
+@import "~app/assets/scss/bundle.scss";
+
+.call-a-courier {
+}
+
+.call-a-courier__column {
+	display: grid;
+	align-items: flex-end;
+	gap: 0.5em;
+	span {
+		font-size: 0.75rem;
+		line-height: 1.25;
+		text-align: left;
+	}
+}
+
+.call-a-courier__inputs {
+	display: grid;
+	gap: 1.5em;
+
+	.input {
+		width: 100%;
+	}
+}

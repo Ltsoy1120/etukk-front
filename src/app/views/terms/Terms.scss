@@ -1,0 +1,26 @@
+@import "~app/assets/scss/bundle.scss";
+
+.terms {
+	display: grid;
+	gap: 1em;
+
+	h3,
+	h4,
+	h5 {
+		margin-block: 1em;
+		font-family: "Arial Narrow", Arial, sans-serif;
+		max-width: 90ch;
+	}
+
+	p {
+		margin-block: 0.5em;
+		line-height: 1.5;
+		max-width: 65%;
+		font-size: 16px;
+		text-align: justify;
+		font-family: "Arial Narrow", Arial, sans-serif;
+		@include Mobile {
+			max-width: 100%;
+		}
+	}
+}

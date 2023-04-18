@@ -1,0 +1,75 @@
+@import "~app/assets/scss/bundle.scss";
+
+.sidebar-nav-drawer {
+	display: flex;
+	flex-direction: column;
+	// gap: 2.5em;
+	@include row-gap(2.5em);
+
+	height: 100%;
+
+	// @include Mobile {
+	// 	width: 50vw;
+	// }
+}
+
+.sidebar-nav-drawer__header {
+	display: flex;
+	align-items: center;
+	// justify-content: space-between;
+	gap: 1.5em;
+
+	margin-left: auto;
+
+	@include Mobile {
+
+		// margin-right: 1.5em;
+	}
+
+	.topbar-actions {
+		&>:first-child {
+			display: none;
+		}
+	}
+}
+
+.sidebar-nav-drawer__close {
+	--icon-size: 1.25em;
+
+	margin: 1em;
+	color: $color-dark;
+}
+
+.sidebar-nav-drawer__logo {
+	width: 10em;
+	margin-left: 2.5em;
+	// margin-bottom: 2.5em;
+}
+
+.sidebar-nav-drawer__nav {
+	display: grid;
+	justify-items: flex-start;
+	gap: 2em;
+
+
+	@include Mobile {
+		padding: 2.5em;
+		// justify-items: center;
+	}
+}
+
+.sidebar-nav-drawer__link {
+	color: $color-main-text;
+	font-size: $font-size-5;
+	font-weight: 500;
+	text-decoration: none;
+
+	&--underlined {
+		padding-bottom: 1px;
+		border-bottom: 1px solid;
+	}
+}
+
+.sidebar-nav-drawer__bottom {
+	margin-top: auto;
+}

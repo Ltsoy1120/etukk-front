@@ -1,0 +1,22 @@
+@import "~app/assets/scss/bundle.scss";
+
+.social-auth {
+	display: grid;
+	gap: 1em;
+}
+
+.social-auth__text {
+	color: $color-raspberry-1;
+	font-size: $font-size-6;
+	text-align: center;
+}
+
+.social-auth__socials {
+	--icon-size: 2.5em;
+
+	display: flex;
+	justify-content: center;
+	@include column-gap(1em);
+
+	color: #DDE4E8;
+}

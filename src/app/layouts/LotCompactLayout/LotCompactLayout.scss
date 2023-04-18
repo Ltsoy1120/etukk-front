@@ -1,0 +1,22 @@
+@import "~app/assets/scss/bundle.scss";
+
+.lot-compact-layout {
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+
+  gap: 5em;
+
+  &>:first-child {
+    flex-shrink: 0;
+    width: 40%;
+  }
+
+  @include Mobile {
+    display: grid;
+
+    &>:first-child {
+      width: unset;
+    }
+  }
+}

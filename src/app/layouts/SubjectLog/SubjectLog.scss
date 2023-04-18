@@ -1,0 +1,33 @@
+@import "~app/assets/scss/bundle.scss";
+
+.subject-log {
+	display: grid;
+	gap: 2.5em;
+}
+
+.subject-log__subject {
+	flex: 1;
+	max-width: 13em;
+	cursor: pointer;
+}
+
+.subject-log__container {
+	display: flex;
+	align-items: flex-start;
+	// gap: 2.5em;
+	@include column-gap(2.5em);
+
+	background: $color-white;
+	transition: 500ms ease opacity;
+}
+
+.subject-log__log {
+	display: grid;
+	gap: 1em;
+
+	flex: 1;
+}
+
+.subject-log__back {
+	justify-self: flex-start;
+}

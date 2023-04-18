@@ -1,0 +1,205 @@
+@import "~app/assets/scss/bundle.scss";
+
+.lot-preview {
+	display: grid;
+	max-width: 14em;
+
+	&:hover {
+		box-shadow: 0px 2px 8px -4px rgba($color-dark, 1);
+	}
+
+	border-radius: 1.5em 1.5em 0 0;
+	box-shadow: 0px 2px 8px -4px rgba($color-dark, 0.5);
+	transition: 250ms ease box-shadow;
+
+	& > .button:last-child {
+		border-radius: unset;
+
+		.button__text {
+			font-size: $font-size-7;
+		}
+	}
+
+	.author__avatar {
+		width: 2.5em;
+		height: 2.5em;
+	}
+
+	@include Mobile {
+		// min-width: 45%;
+		// flex: 1;
+		max-width: 44vw;
+		// font-size: 0.75em;
+		cursor: pointer;
+		a {
+			text-decoration: none;
+			color: $color-dark;
+		}
+	}
+}
+
+.lot-preview__image {
+	width: 100%;
+	aspect-ratio: 1;
+	border-radius: inherit;
+	object-fit: contain;
+}
+
+.lot-preview__info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 14em;
+	gap: 1em;
+
+	padding: 1em;
+
+	& > .button:last-child {
+		margin: calc(-1em - 2px);
+		margin-top: unset;
+		border-radius: unset;
+
+		width: calc(100% + 2em + 2px * 2);
+		// flex: 1;
+		// max-width: 100%;
+		overflow: hidden;
+		z-index: 1;
+
+		.button__text {
+			font-size: $font-size-7;
+
+			max-width: 100%;
+			overflow: hidden;
+		}
+	}
+	@include Mobile {
+		max-width: 44vw;
+	}
+}
+
+.lot-preview__title {
+	@extend .clamp-2-lines;
+	@include Typography($font-size-5, 600);
+	text-transform: uppercase;
+
+	@include Mobile {
+		max-width: 10em;
+		font-size: $font-size-6;
+	}
+}
+
+.lot-preview__city {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid $color-gray-4;
+
+	font-size: $font-size-5;
+
+	.icon[name="truck"] {
+		--icon-size: 1.75em;
+		color: $color-gray-2;
+	}
+
+	@include Mobile {
+		font-size: $font-size-6;
+	}
+}
+
+.lot-preview__details {
+	display: grid;
+	gap: 0.75em;
+
+	&--short {
+		.lot-preview__entry {
+			& > :first-child {
+				max-width: 11ch;
+
+				@include Mobile {
+					font-size: $font-size-7;
+				}
+			}
+
+			& > :last-child {
+				@include Mobile {
+					font-size: $font-size-6;
+				}
+			}
+		}
+	}
+}
+
+.lot-preview__entry {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	overflow: hidden;
+	font-size: $font-size-5;
+
+	small {
+		line-height: 1.25;
+		color: $color-gray-2;
+
+		max-width: 15ch;
+	}
+
+	strong {
+		white-space: nowrap;
+	}
+	@include Mobile {
+		strong {
+			white-space: normal;
+			text-align: right;
+		}
+	}
+}
+
+.lot-preview__bookmark {
+	--icon-size: 2em;
+
+	position: absolute;
+	top: 0;
+	right: 10%;
+	transform: translateY(-25%);
+
+	color: $color-gray-3;
+
+	&--active {
+		color: $color-raspberry-1;
+	}
+}
+
+/* Status */
+
+.lot-preview-status {
+	display: flex;
+	align-items: center;
+
+	font-size: $font-size-5;
+}
+
+.lot-preview-status__icon {
+	--icon-size: 1em;
+
+	margin-right: 0.5em;
+
+	&--truck {
+		color: $color-orange;
+	}
+
+	&--check {
+		color: #27ae60;
+	}
+}
+
+.lot-preview-status__label {
+	font-size: $font-size-5;
+	line-height: 1.35;
+
+	em {
+		font-weight: 600;
+	}
+}

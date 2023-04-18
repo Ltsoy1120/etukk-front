@@ -1,0 +1,30 @@
+@import "~app/assets/scss/bundle.scss";
+
+.quote {
+	display: flex;
+	align-items: flex-end;
+	// gap: 2em;
+	@include column-gap(2em);
+}
+
+.quote__icon {
+	--icon-size: 5em;
+
+	color: $color-raspberry-1;
+}
+
+.quote__container {
+	// display: grid;
+	// gap: 1em;
+}
+
+.quote__content {
+	// white-space: pre-wrap;
+}
+
+.quote__author {
+	font-size: $font-size-5;
+	font-weight: 500;
+	text-transform: uppercase;
+	text-align: right;
+}

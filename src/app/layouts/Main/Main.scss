@@ -1,0 +1,6 @@
+@import "~app/assets/scss/bundle.scss";
+
+.main {
+	@include WidthLimit;
+	margin-top: 2em;
+}

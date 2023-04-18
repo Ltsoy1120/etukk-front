@@ -1,0 +1,94 @@
+@import "~app/assets/scss/bundle.scss";
+
+.textarea {
+	display: grid;
+	gap: 0.5em;
+
+	@include Mobile {
+		width: 100%;
+	}
+}
+
+.textarea__appearance {
+	flex: 1;
+	width: var(--textarea-width, auto);
+	max-width: 100%;
+	max-height: 50vh;
+	transition: 200ms ease color;
+
+	@include InputAppearance;
+
+	font-size: $font-size-5;
+	line-height: 1.25;
+	overflow-wrap: break-word;
+	cursor: text;
+
+	&:invalid {
+		color: $color-raspberry-1;
+	}
+
+	&::placeholder {
+		color: $color-gray-3;
+	}
+
+	@include Mobile {
+		width: unset;
+	}
+}
+
+.textarea__label {
+	@include Typography;
+	font-size: $font-size-5;
+}
+
+/* Attachments */
+
+.textarea-attachments {
+	display: flex;
+	align-items: center;
+}
+
+.textarea-attachments__attach {
+	--icon-size: 2em;
+	margin-left: 1em;
+	color: $color-gray-3;
+	cursor: pointer;
+}
+
+.textarea-attachments__input {
+	display: none;
+}
+
+
+.textarea-attachments__attachments {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include column-gap(0.5em);
+}
+
+.textarea-attachment {
+	height: 3.5em;
+	aspect-ratio: 1;
+
+	&>img {}
+}
+
+.textarea-attachment__image {
+	height: 3.5em;
+	aspect-ratio: 1;
+
+	object-fit: cover;
+	border-radius: $border-radius-1;
+}
+
+.textarea-attachment__close {
+	--icon-size: 0.75em;
+	--close-button-size: 1.25em;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	transform: translate(25%, -25%);
+}

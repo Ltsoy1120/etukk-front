@@ -1,0 +1,256 @@
+@import "~app/assets/scss/bundle.scss";
+
+.lot-view {
+	display: grid;
+	gap: 5em;
+}
+
+.lot-info-layout {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	& > :nth-child(1) {
+		width: 45%;
+	}
+
+	& > :nth-child(2) {
+		width: 35%;
+		margin: 0 auto;
+	}
+
+	@include Mobile {
+		display: grid;
+		justify-content: unset;
+
+		& > :nth-child(1),
+		& > :nth-child(2) {
+			width: unset;
+			margin: unset;
+		}
+	}
+}
+
+.lot-info-layout__section {
+	display: grid;
+	gap: 2em;
+
+	& > h4 {
+		margin: unset;
+	}
+}
+
+.lot-info-layout__fixed {
+	@include Mobile {
+		position: sticky;
+		// inset-inline: 0;
+		bottom: 0;
+
+		padding: 4vw 0;
+		background: $color-white;
+		// box-shadow: 0 0 12px 0px #ccc;
+
+		z-index: 1;
+	}
+}
+
+/* Info Preview */
+
+.lot-info-preview {
+}
+
+.lot-info-preview__bookmark {
+	--icon-size: 2.5em;
+
+	position: absolute;
+	top: 0;
+	right: 5%;
+	transform: translateY(-25%);
+
+	color: $color-gray-4;
+	transition: 100ms ease color;
+
+	&--active {
+		color: $color-raspberry-1;
+	}
+	z-index: 1;
+}
+
+/* Info Summary */
+
+.lot-info-summary {
+}
+
+.lot-info-summary__description {
+}
+
+/* Trade */
+
+.lot-info-details {
+	display: grid;
+	gap: 2em;
+
+	.buttons {
+		justify-content: space-between;
+	}
+}
+
+.lot-info-details__header {
+	display: flex;
+}
+
+.lot-info-details__backward {
+	position: absolute;
+	top: 0.25em;
+	left: -1.5em;
+	transform: rotate(90deg);
+}
+
+.lot-info-details__title {
+	@extend .clamp-2-lines;
+}
+
+.lot-info-details__city {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	span {
+		font-size: $font-size-5;
+		font-weight: 500;
+	}
+
+	.icon {
+		--icon-size: 2em;
+		color: $color-gray-3;
+	}
+}
+
+/* Bid Up */
+
+.lot-info-bid {
+	$padding: 1.25em;
+
+	&:not(:first-child) {
+		padding-top: $padding;
+		border-top: 1px solid $color-gray-4;
+	}
+
+	&--box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: $padding;
+		border: 1px solid $color-gray-4;
+		border-radius: $border-radius-1;
+	}
+}
+
+.lot-info-bid__entries {
+	display: grid;
+	gap: 1em;
+}
+
+.lot-info-bid__entry {
+	display: flex;
+	justify-content: space-between;
+
+	& > :nth-child(1) {
+		color: $color-gray-2;
+		font-size: $font-size-5;
+	}
+
+	& > :nth-child(2) {
+		font-size: $font-size-3;
+		font-weight: 600;
+	}
+
+	&--column {
+		display: grid;
+		justify-content: unset;
+		gap: 0.5em;
+	}
+}
+
+.lot-info-bid__step {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1em;
+	padding-bottom: 0.5em;
+
+	& > :nth-child(1) {
+		color: $color-gray-2;
+		font-size: $font-size-5;
+	}
+
+	& > :nth-child(2) {
+		font-size: $font-size-3;
+		font-weight: 600;
+	}
+
+	&--column {
+		display: grid;
+		justify-content: unset;
+		gap: 0.5em;
+	}
+}
+
+.lot-info-bid__text {
+	font-size: $font-size-6;
+}
+
+.lot-info-bid__buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Actions */
+
+.lot-actions {
+	display: flex;
+	// gap: 2em;
+	@include column-gap(2em);
+}
+
+.lot-actions__button {
+	display: flex;
+	// gap: 0.5em;
+	@include column-gap(0.5em);
+
+	padding: 0.75em 1.25em;
+	background-color: $color-white;
+	border: 1px solid $color-gray-4;
+	border-radius: $border-radius-1;
+
+	font-size: $font-size-5;
+
+	.icon {
+		color: $color-gray-3;
+	}
+}
+
+/* Notification */
+
+.lot-notification {
+	display: flex;
+	align-items: flex-start;
+
+	&--column {
+		display: flex;
+		flex-direction: column;
+		margin-left: 4em;
+		gap: 0.5em;
+	}
+	@include Mobile {
+		display: grid;
+		justify-content: unset;
+		gap: 5em;
+
+		& > :nth-child(1),
+		& > :nth-child(2) {
+			width: unset;
+			margin: unset;
+		}
+	}
+}

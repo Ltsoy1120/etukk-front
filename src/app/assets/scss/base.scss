@@ -1,0 +1,166 @@
+@import "bundle.scss";
+
+* {
+	position: relative;
+	box-sizing: border-box;
+}
+
+body {
+	font: 16px/1 "Inter", "Arial", sans-serif;
+	color: $color-main-text;
+	overflow-y: scroll;
+	margin: unset;
+
+	@include Mobile {
+		min-height: 100vh;
+		min-height: -webkit-fill-available;
+	}
+}
+
+html {
+	@include Mobile {
+		height: -webkit-fill-available;
+	}
+}
+
+/* Typography */
+
+.heading {
+	@include Typography;
+	margin: unset;
+	text-transform: uppercase;
+}
+
+/* Headings */
+
+h1 {
+	font-size: $font-size-1;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: $font-size-2;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: $font-size-3;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: $font-size-4;
+	font-weight: 600;
+}
+
+h5 {
+	font-size: $font-size-5;
+	font-weight: 600;
+}
+
+/* Text */
+
+p {
+	font-size: $font-size-5;
+	line-height: 1.35;
+	overflow-wrap: anywhere;
+}
+
+small {
+	font-size: $font-size-6;
+}
+
+/* Anchor */
+
+a {
+	color: $color-blue;
+	font-weight: 400;
+	font-size: $font-size-5;
+	word-break: normal;
+
+	&.ghost {
+		position: absolute;
+		inset: 0;
+	}
+
+	&.gray {
+		justify-self: center;
+		color: $color-gray-3;
+		border-bottom: 1px solid;
+		cursor: pointer;
+	}
+}
+
+/* UX */
+
+input,
+button,
+textarea {
+	all: unset;
+	position: relative;
+}
+
+input {
+	cursor: revert;
+}
+
+button,
+textarea {
+	&:focus-visible {
+		outline: revert;
+	}
+}
+
+button {
+	cursor: pointer;
+	transition: 100ms ease opacity;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+
+	&:not(:disabled):active {
+		opacity: 0.75;
+	}
+}
+
+em {
+	all: unset;
+}
+
+pre {
+	padding: 1em;
+	background: #eaeaea;
+	border: 1px solid #bdbdbd;
+	border-radius: 0.25em;
+	white-space: pre-line;
+}
+
+hr {
+	width: 100%;
+	height: 1px;
+	margin: unset;
+	background: $color-gray-4;
+	border: unset;
+}
+
+.center {
+	text-align: center;
+}
+
+input::-webkit-calendar-picker-indicator {
+	width: 1em;
+	height: 1em;
+
+	padding: unset;
+	margin: unset;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	min-height: 100vh;
+	@include Mobile {
+		width: 100vw;
+	}
+}

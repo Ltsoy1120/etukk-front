@@ -1,0 +1,94 @@
+@import "~app/assets/scss/bundle.scss";
+
+.lot-edit-view {
+	display: grid;
+	align-content: flex-start;
+	gap: 3em;
+}
+
+.lot-edit-view__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@include Mobile {
+		// display: grid;
+	}
+}
+
+.lot-edit-view__container {
+	display: grid;
+	align-content: flex-start;
+	gap: 2.5em;
+}
+
+.lot-edit-view__buttons {
+	display: flex;
+	// gap: 2em;
+	@include column-gap(2em);
+
+	margin-top: 2.5em;
+	margin-left: calc(20ch - 0.25em);
+
+	@include Mobile {
+		// position: sticky;
+		// bottom: 0;
+
+		// padding: 4vw;
+		// margin-left: auto;
+		// background: $color-white;
+
+		// z-index: 1;
+	}
+}
+
+/* Setting */
+
+.lot-edit-setting {
+	display: flex;
+	align-items: flex-start;
+
+	@include Mobile {
+		display: grid;
+		gap: 1em;
+	}
+}
+
+.lot-edit-setting__label {
+	width: 100%;
+	max-width: 20ch;
+
+	margin-top: 0.75em;
+	margin-right: 1.5em;
+
+	@include Typography;
+	color: $color-gray-2;
+	font-size: $font-size-5;
+
+	@include Mobile {
+		font-size: $font-size-4;
+	}
+}
+
+.lot-edit-setting__container {
+	display: flex;
+	align-items: flex-start;
+	// gap: 1.5em;
+	@include column-gap(1.5em);
+
+	& > .close-button {
+		margin-top: 0.35em;
+	}
+}
+
+.lot-edit-setting__column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	// gap: 1.5em;
+	@include column-gap(1.5em);
+
+	& > .close-button {
+		margin-top: 0.35em;
+	}
+}

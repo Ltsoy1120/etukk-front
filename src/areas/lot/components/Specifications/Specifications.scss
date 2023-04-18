@@ -1,0 +1,48 @@
+@import "~app/assets/scss/bundle.scss";
+
+.specifications {
+	display: grid;
+	gap: 2.5em;
+}
+
+.specifications__container {
+	display: grid;
+	gap: 1.5em;
+	div > p {
+		color: $color-gray-3;
+	}
+}
+
+.specifications__specification {
+	display: flex;
+	align-items: center;
+	@include column-gap(1em);
+}
+
+.specifications__add {
+	display: flex;
+	align-items: center;
+
+	@include column-gap(1em);
+}
+
+.specifications__text {
+	columns: $color-gray-2;
+	font-size: $font-size-5;
+}
+
+.specifications__circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.75em;
+	height: 1.75em;
+	background: #bcc2c7;
+	border-radius: 50%;
+}
+
+.specifications__icon {
+	--icon-size: 1em;
+
+	color: $color-white;
+}

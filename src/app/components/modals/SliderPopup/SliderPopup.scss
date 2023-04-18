@@ -1,0 +1,27 @@
+@import "~app/assets/scss/bundle.scss";
+
+.slider-popup {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slider-popup__container {
+	display: grid;
+	gap: 2em;
+
+	width: 60em;
+	cursor: auto;
+
+	@include Mobile {
+		width: fit-content;
+		padding: 0 5vw;
+	}
+}
+
+.slider-popup__close {
+	--icon-size: 1.5em;
+
+	margin-left: auto;
+	color: $color-white;
+}

@@ -1,0 +1,68 @@
+@import "~app/assets/scss/bundle.scss";
+
+$image-height: 8.75em;
+
+.choose-image {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	@include Mobile {
+		display: grid;
+		flex: 1 1;
+		gap: 1em;
+		grid-template-columns: repeat(2, 1fr);
+		align-content: flex-start;
+	}
+}
+
+.choose-image__chooser {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: $image-height;
+	aspect-ratio: 1.2;
+
+	border: 1px solid $color-gray-4;
+	border-radius: $border-radius-1;
+
+	cursor: pointer;
+}
+
+.choose-image__camera {
+	--icon-size: 2.75em;
+
+	color: $color-gray-4;
+}
+
+.choose-image__input {
+	display: none;
+}
+
+.choose-image__file {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 41vw;
+	height: $image-height;
+}
+
+.choose-image__image {
+	height: $image-height;
+	aspect-ratio: 1.2;
+	border-radius: $border-radius-1;
+	object-fit: cover;
+	@include Mobile {
+		width: 100%;
+		min-height: 100%;
+		object-fit: cover;
+	}
+}
+
+.choose-image__remove {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	transform: translate(50%, -50%);
+}
